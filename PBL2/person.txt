@@ -1,0 +1,18 @@
+1|Le Minh Khai|0327439645|0|khaile345|342005
+2|Tran Tien Hung|0258741369|0|hungtran|18082005
+3|Ngo Anh Khoa|0321478523|0|anhkhoango|14032005
+4|Chau Van Minh Khoa|0254136987|0|khoaibd|05092005
+5|Pham Nhat Thang|2589632145|0|phamthang|thangbede
+6|Nhan Ngoc Sang|02365417893|0|sangnhan|sangnhan123
+7|Tran Thanh Binh|0457123698|0|binhtran|120453
+8|Phan Duc Ngoc|0456987123|1|ducngoc|365412|9000000
+9|Tran Anh Khoa|0258741145|0|khoatran|0125vdvd5
+10|Nguyen Van Xuan|0895632147|0|vanxuan|4587vuive
+11|Quach Dieu Linh|0254785569|0|linh24|24022005
+12|Nguyen Thanh Tung|0258963144|0|sontungmtp|05071994
+13|Tran Xuan Bach|0255523143|0|xbteamflash|451203vv
+14|Truong Thi Phuong Uyen|0254563145|0|piupiu|03052005
+15|Nguyen Thi Dieu Chau|02415462354|0|chauchau|05032005
+16|admin|0214587555|1|admin|admin123|5000000
+16|admin1|0214584855|1|admin1|admin1234|5000000
+18|thang|0775462868|0|thang1301|thang1301

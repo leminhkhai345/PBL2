@@ -13,14 +13,11 @@
 
 
 using namespace std;
-//chỉ thêm khoản tàm 10 dòng
 int main() {
 
 	int numberOfperson = 0;
 
-	// Danh sach room
 	ifstream ifile("room.txt");
-//	if (ifile.is_open()) cout << "thanh cong" << endl;
 	List<room> RL;
 	string line;
 	while (getline(ifile, line)) {
@@ -37,7 +34,6 @@ int main() {
 			}
 		}
 		v[j] = x;
-		//	room(int roomId, string roomType, int price) 
 		room* r = new room(stoi(v[0]), v[1], stoi(v[2]));
 		RL.push(r);
 	}
@@ -46,7 +42,6 @@ int main() {
 
 		// DAnh sach person
 	ifstream ifilee("person.txt", ios::in);
-//	if (ifilee.is_open()) cout << "thanh cong" << endl;
 	List<person> PL;
 	line = "";
 	while (getline(ifilee, line)) {
@@ -119,62 +114,21 @@ int main() {
 
 
 	//while (1) {
+	//	
 
-	//	gotoxy(55, 5); cout << "---------CHOOSE THE BANK----------";
-	//	gotoxy(35, 9); cout << "________________";
-	//	gotoxy(35, 10); cout << "|              |";
-	//	gotoxy(35, 11); cout << "|     BIDV     |";
-	//	gotoxy(35, 12); cout << "|______________|";
+	//	gotoxy(110, 30); cout << "___________________________";
+	//	gotoxy(110, 31); cout << "|                         |";
+	//	gotoxy(110, 32); cout << "|          EXIT           |";
+	//	gotoxy(110, 33); cout << "|_________________________|";
 
-	//	gotoxy(63, 9); cout << "________________";
-	//	gotoxy(63, 10); cout << "|              |";
-	//	gotoxy(63, 11); cout << "|  VIETTINBANK |";
-	//	gotoxy(63, 12); cout << "|______________|";
 
-	//	gotoxy(91, 9); cout << "________________";
-	//	gotoxy(91, 10); cout << "|              |";
-	//	gotoxy(91, 11); cout << "|    MB BANK   |";
-	//	gotoxy(91, 12); cout << "|______________|";
 
-	//	gotoxy(35, 17); cout << "________________";
-	//	gotoxy(35, 18); cout << "|              |";
-	//	gotoxy(35, 19); cout << "|   AGRIBANK   |";
-	//	gotoxy(35, 20); cout << "|______________|";
 
-	//	gotoxy(63, 17); cout << "________________";
-	//	gotoxy(63, 18); cout << "|              |";
-	//	gotoxy(63, 19); cout << "|  VIETCOMBANK |";
-	//	gotoxy(63, 20); cout << "|______________|";
-
-	//	gotoxy(91, 17); cout << "________________";
-	//	gotoxy(91, 18); cout << "|              |";
-	//	gotoxy(91, 19); cout << "|      ACB     |";
-	//	gotoxy(91, 20); cout << "|______________|";
-
-	//	gotoxy(35, 25); cout << "________________";
-	//	gotoxy(35, 26); cout << "|              |";
-	//	gotoxy(35, 27); cout << "|  TECHCOMBANK |";
-	//	gotoxy(35, 28); cout << "|______________|";
-
-	//	gotoxy(63, 25); cout << "________________";
-	//	gotoxy(63, 26); cout << "|              |";
-	//	gotoxy(63, 27); cout << "|    TP BANK   |";
-	//	gotoxy(63, 28); cout << "|______________|";
-
-	//	gotoxy(91, 25); cout << "________________";
-	//	gotoxy(91, 26); cout << "|              |";
-	//	gotoxy(91, 27); cout << "|   OCEANBANK  |";
-	//	gotoxy(91, 28); cout << "|______________|";
-
-	//	gotoxy(120, 32); cout << "__________________";
-	//	gotoxy(120, 33); cout << "|                |";
-	//	gotoxy(120, 34); cout << "|      EXIT      |";
-	//	gotoxy(120, 35); cout << "|________________|";
 
 	//	string choice;
 	//	
 	//	POINT point = getMouseClickPosition();
-	//	gotoxy(1, 33);
+	//	gotoxy(20, 10);
 	//	cout << point.x << " " << point.y << endl;
 	//	string x;
 	//	getline(cin, x);
@@ -187,7 +141,7 @@ int main() {
 	bool BREAK = false;
 	while (1) {
 		while (1) {
-			cout << "                                                            MUONG THANH HOTEL                                             " << endl;
+			cout << "                                                                   HOTEL                                             " << endl;
 			cout << "\n\n\n\n";
 			cout << "                 -------------------------------------------                  ------------------------------------------" << endl;
 			cout << "                 |                  LOGIN                  |                  |                 REGISTER               |" << endl;
@@ -215,6 +169,7 @@ int main() {
 				BREAK = true;
 				break;
 			}
+			system("cls");
 		}
 
 		system("cls");
@@ -223,6 +178,7 @@ int main() {
 		if (p) {
 			if (p->getRole() == 0) {
 				while (1) {
+					system("cls");
 					gotoxy(55, 2); cout << "_________________________________";
 					gotoxy(55, 4); cout << "|_______________________________|";
 					gotoxy(55, 3); cout << "|            OPTIONS            |";
@@ -243,19 +199,15 @@ int main() {
 					POINT point = getMouseClickPosition();
 					system("cls");
 					if (point.x >= 375 && point.x <= 760 && point.y >= 340 && point.y <= 390) {
-						cout << "\n------------------------------------BOOKING ROOM------------------------------------\n\n\n";
-						Booking(RL, BL, p);
+						cout << "\n                          ---------------------------   BOOKING ROOM  ---------------------------\n\n\n";
+						int k = Booking(RL, BL, p);
+						if (k == -1) continue;
 					}
 					else if (point.x >= 975 && point.x <= 1370 && point.y >= 340 && point.y <= 390) {
-						cout << "\n------------------------------------CANCELLATION------------------------------------\n\n\n";
 						cancellation(BL, p);
 					}
 					else if (point.x >= 745 && point.x <= 1000 && point.y >= 490 && point.y <= 530) break;
 					else continue;
-
-					string x;
-					getline(cin, x);
-					system("cls");
 				}
 			}
 
@@ -309,63 +261,35 @@ int main() {
 						editRoom(RL);
 					}
 					else if (point.x >= 375 && point.x <= 770 && point.y >= 345 && point.y <= 395) {
-						cout << "\n------------------------------------BOOKED ROOM STATISTICS------------------------------------\n\n\n";
-
 						deleteRoom(RL);
 					}
 					else if (point.x >= 975 && point.x <= 1370 && point.y >= 345 && point.y <= 395) {
-
-						cout << "\n------------------------------------BOOKED ROOM STATISTICS------------------------------------\n";
-						tm t1 = {};
-						tm t2 = {};
-						cout << "Enter the date(dd mm yyyy)" << endl;
-						cout << "From: ";
-						cin >> t1.tm_mday >> t1.tm_mon >> t1.tm_year;
-						t1.tm_mon -= 1; t1.tm_year -= 1900;
-						cout << "To : ";
-						cin >> t2.tm_mday >> t2.tm_mon >> t2.tm_year;
-						t2.tm_mon -= 1; t2.tm_year -= 1900;
-						int count = numberOfRoomBooked(BL, mktime(&t1), mktime(&t2));
-						cout << "NUMBER OF BOOKED ROOM: " << count << endl;
-						cin.ignore();
+						int count = numberOfRoomBooked(BL);
+						if (count > -1) {
+							cout << "\n                     NUMBER OF BOOKED ROOM: " << count << endl;
+							cin.ignore();
+							cin.ignore();
+						}
 					}
 					else if (point.x >= 375 && point.x <= 770 && point.y >= 435 && point.y <= 485) {
-
-						cout << "\n-----------------------------AVAILABLE ROOM STATISTICS-----------------------------\n";
-						tm t1 = {};
-						tm t2 = {};
-						cout << "Enter the date (dd mm yyyy)" << endl;
-						cout << "From: ";
-						cin >> t1.tm_mday >> t1.tm_mon >> t1.tm_year;
-						t1.tm_mon -= 1; t1.tm_year -= 1900;
-						cout << "To : ";
-						cin >> t2.tm_mday >> t2.tm_mon >> t2.tm_year;
-						t2.tm_mon -= 1; t2.tm_year -= 1900;
-						int count = numberOfRoomAvailable(RL, BL, mktime(&t1), mktime(&t2));
-						cout << "NUMBER OF AVAILABLE ROOM: " << count << endl;
-						cin.ignore();
+						int count = numberOfRoomAvailable(RL, BL);
+						if (count > -1) {
+							cout << "\n                     NUMBER OF AVAILABLE ROOM: " << count << endl;
+							cin.ignore();
+							cin.ignore();
+						}
 					}
 					else if (point.x >= 975 && point.x <= 1370 && point.y >= 435 && point.y <= 485) {
-						tm t1 = {};
-						tm t2 = {};
-						cout << "Enter the date (dd mm yyyy)" << endl;
-						cout << "From: ";
-						cin >> t1.tm_mday >> t1.tm_mon >> t1.tm_year;
-						t1.tm_mon -= 1; t1.tm_year -= 1900;
-						cout << "To : ";
-						cin >> t2.tm_mday >> t2.tm_mon >> t2.tm_year;
-						t2.tm_mon -= 1; t2.tm_year -= 1900;
-						long long sum = revenueByDay(BL, mktime(&t1), mktime(&t2));
-						cout << sum;
-						cin.ignore();
-
+						long long sum = revenueByDay(BL);
+						if (sum > -1) {
+							cin.ignore();
+							cin.ignore();
+						}
 					}
 					else if (point.x >= 750 && point.x <= 1000 && point.y >= 530 && point.y <= 580) {
 						break;
 					}
 					else continue;
-					string x;
-					getline(cin, x);
 					system("cls");
 				}
 			}
@@ -408,9 +332,7 @@ int main() {
 		ofileee << "|" << xxx->getValue()->getCheckInDate() << "|" << xxx->getValue()->getCheckOutDate() << endl;
 		xxx = xxx->getNext();
 	}
-
 	ofileee.close();
-
 
 	return 0;
 }

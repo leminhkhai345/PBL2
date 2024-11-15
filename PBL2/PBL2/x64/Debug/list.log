@@ -1,6 +1,6 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (PBL2\x64\Debug\) contains files shared from another project (list.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Main.cpp
-E:\PBL2\PBL2\Function.h(486,129): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
+E:\PBL2\PBL2\Function.h(622,131): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
   (compiling source file 'Main.cpp')
   
   list.vcxproj -> E:\PBL2\PBL2\x64\Debug\PBL2.exe

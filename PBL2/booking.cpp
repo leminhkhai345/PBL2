@@ -89,14 +89,24 @@ void booking::display() {
 	localtime_s(&tt1, &t1);
 	localtime_s(&tt2, &t2);
 	if (this->roomId < 10) {
-		cout << "|       " << this->roomId << "       |       " << this->name << "      |     ";
+		cout << "|       " << this->roomId << "       |       " << this->name; 
+		string temp = "";
+		for (int i = 0; i < 18 - this->name.size(); i++) {
+			temp += " ";
+		}
+		cout << temp << "|     ";
 		if (this->amount >= 1000000) 	cout << this->amount << "        |        ";
 		else if (this->amount < 1000000) cout << this->amount << "         |        ";
 		cout << tt1.tm_mday << "/" << tt1.tm_mon + 1
 			<< "/" << tt1.tm_year  + 1900<< "       |       " << tt2.tm_mday << "/" << tt2.tm_mon + 1 << "/" << tt2.tm_year + 1900 << "     |" << endl;
 	}
 	else if (this->roomId < 100) {
-		cout << "|       " << this->roomId << "      |       " << this->name << "      |     ";
+		cout << "|       " << this->roomId << "      |       " << this->name; 
+		string temp = "";
+		for (int i = 0; i < 18 - this->name.size(); i++) {
+			temp += " ";
+		}
+		cout << temp << "|     ";
 		if (this->amount >= 1000000) 	cout << this->amount << "        |        ";
 		else if(this->amount < 1000000) cout << this->amount << "         |        ";
 		cout << tt1.tm_mday << "/" << tt1.tm_mon + 1
